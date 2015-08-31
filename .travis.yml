@@ -21,6 +21,11 @@ before_script:
 
 script:
   - ./tests/bin/phpunit.$DB.sh;
-  
+
+matrix:
+  exclude:
+    - php: hhvm
+      env: DB=pgsql DB_USER=postgres DB_NAME=postgres  # driver for PostgreSQL currently unsupported by HHVM, requires 3rd party dependency
+
 #after_script:
 #  - php vendor/bin/coveralls -v
