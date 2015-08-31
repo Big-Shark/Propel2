@@ -211,11 +211,7 @@ class TestCaseFixtures extends TestCase
     protected function getFixturesConnectionDsn()
     {
         if ('sqlite' === strtolower(getenv('DB'))) {
-            $path = __DIR__ . '/../../test.sq3';
-            if (!file_exists($path)) {
-                touch($path);
-            }
-            return 'sqlite:' . realpath($path);
+            return 'sqlite:test.sqlite';
         }
 
         $db = strtolower(getenv('DB'));
