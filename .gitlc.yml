@@ -1,2 +1,2 @@
 code_style:
-  default: [codespell,drupal,drupalpractice]
+  default: [PSR2]
